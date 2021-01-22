@@ -1,6 +1,7 @@
 {
     "name": "Pie Chart Sample",
+    "id": "745146759001708690",
     "api": "1.0.0",
-    "main": "code.ts",
-    "ui": "ui.html"
+    "main": "./build/code.js",
+    "ui": "./build/ui.html"
   }
