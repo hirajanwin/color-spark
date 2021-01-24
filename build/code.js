@@ -1,7 +1,7 @@
 
 
 // This shows the HTML page in "ui.html".
-figma.showUI(__html__, { width: 440, height: 440 });
+figma.showUI(__html__, { width: 428, height: 440 });
 //function to convert hex color code to RGB because figma takes fill input as RGB
 function hex2rgb(hex) {
     return [Number('0x' + hex[1] + hex[2]) | 0, Number('0x' + hex[3] + hex[4]) | 0, Number('0x' + hex[5] + hex[6]) | 0];
@@ -22,7 +22,7 @@ figma.ui.onmessage = msg => {
         colorsFrame.name = msg.name + " Colors";
         colorsFrame.x = figma.viewport.center.x;
         colorsFrame.y = figma.viewport.center.y;
-        figma.notify(`👍 Successfully imported ${msg.name}`)
+        figma.notify(`👍 Successfully imported: ${msg.name}`)
 
         //loop to create color rectangles
         for (let i = 0; i < msg.colorsList.length; i++) {

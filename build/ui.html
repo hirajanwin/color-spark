@@ -1,6 +1,9 @@
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap" rel="stylesheet">
+
 
 <!--Styles-->
 <style>
@@ -27,31 +30,38 @@
   .colour_pallete-box .header h2 {
     font-size: 14px;
     margin: 0;
-    color: #333;
+    color: #2d3748;
     font-weight: bold;
-    font-family: 'Roboto Mono'
+    line-height: 1.1em;
+    letter-spacing: -.035em;
+    font-family: "Inter", sans-serif;
   }
 
   .colour_pallete-box .header button {
-    padding: 4px 8px;
+    padding: 4px 10px;
     font-size: 12px;
-    font-weight: 600;
     align-self: flex-start;
+    font-weight: 600;
     background-color: #222;
+    font-family: "Inter", sans-serif;
     color: #FFF;
-    border: 1px solid #555;
-    border-radius: 4px;
-    margin-left: 8px;
-    font-family: 'Rubik';
+    border: 2px solid #FFF;
+    border-radius: 5px;
     outline: none;
     position: relative;
-    left: -2%;
+    left: 1%;
+    transition: all .15s ease;
     
   }
 
   .colour_pallete-box .header button:focus, .colour_pallete-box .header button:hover {
     cursor: pointer;
     outline: none;
+    background: gray;
+    color: #FFF;
+    transition: all .15s ease;
+    
+          animation: jello-horizontal 0.9s both;
   }
 
   .colour_pallete-box .color-list {
@@ -69,11 +79,13 @@
   }
 
   #search {
-    margin: 8px 8px 0 8px;
+   
     border-bottom: 1px solid #dedede;
     padding: 4px 8px;
     font-family: "Inter", sans-serif;
     color: #333333;
+    position: relative;
+    left: 30%;
     font-size: 12px;
     border: 1px solid #eee;
     border-radius: 2px;
@@ -84,12 +96,21 @@
   .no-results {
     padding: 8px;
     margin: 8px;
+    position: relative;
+    top: 125px;
+    font-size: 14px;
+    margin: 0;
+    color: #2d3748;
+    font-weight: bold;
+    line-height: 1.1em;
+    letter-spacing: -.035em;
     font-family: "Inter", sans-serif;
-    background-color: #eee;
-    color: #333;
-    font-size: 12px;
     text-align: center;
     line-height: 2;
+  }
+
+  #search-emoji {
+    font-size: 22px;
   }
 
   .divider {
@@ -116,6 +137,7 @@
 <span>Add palettes from popular design systems to your file</span>
 <!--Search-->
 <input type="text" id="search" onkeyup="filter()" placeholder="Search..">
+
 <!--Divider-->
 <div class="divider"></div>
 <script>
@@ -124,18 +146,26 @@
     "colour_pallete_name": "Gray",
     "colors": ["#f8f9fa", "#f1f3f5", "#e9ecef", "#dee2e6", "#ced4da", "#adb5bd", "#868e96", "#495057", "#343a40", "#212529"]
   }, {
-    "colour_pallete_name": "Alibaba",
-    "colors": ["#f8f9fa", "#fa541c", "#fa8c16", "#faad14", "#fadb14", "#a0d911", "#52c41a", "#13c2c2", "#1890ff", "#2f54eb"]
+    "colour_pallete_name": "Red",
+    "colors": ["#fff5f5", "#ffe3e3", "#ffc9c9", "#ffa8a8", "#ff8787", "#ff6b6b", "#fa5252", "#f03e3e", "#e03131", "#c92a2a"] // todo
   }, 
   {
-    "colour_pallete_name": "Apple",
-    "colors": ["#157EFA", "#3DC55D", "#595AD3", "#FD9426", "#FD9426", "#AE58DB", "#FC3D39", "#60C9F8", "#FECB2F", "8E8E93"]
+    "colour_pallete_name": "Pink",
+    "colors": ["#fff0f6", "#ffdeeb", "#fcc2d7", "#faa2c1", "#f783ac", "#f06595", "#e64980", "#d6336c", "#c2255c", "#a61e4d"]
   }, {
-    "colour_pallete_name": "Atlassian",
-    "colors": ["#0052CC", "#172B4D", "#FF5630", "#FFAB00", "#36B37E", "#00B8D9", "#6554C0", "#FC3D39", "#FC3D39", "#FC3D39"]
+    "colour_pallete_name": "Grape",
+    "colors": ["#f8f0fc", "#f3d9fa", "#eebefa", "#e599f7", "#da77f2", "#cc5de8", "#be4bdb", "#ae3ec9", "#9c36b5", "#862e9c"]
   }, {
-    "colour_pallete_name": "Bulb",
-    "colors": ["#E4228E", "#003366", "#00AB55", "#00AB55", "#EE0000", "#FF6200", "#F2F2F2", "#CCCCCC", "#8c", "#FC3D39"]
+    "colour_pallete_name": "Violet",
+    "colors": ["#f3f0ff", "#e5dbff", "#d0bfff", "#b197fc", "#9775fa", "#845ef7", "#7950f2", "#7048e8", "#6741d9", "#5f3dc4"]
+  },
+  {
+    "colour_pallete_name": "Indigo",
+    "colors": ["#edf2ff", "#dbe4ff", "#bac8ff", "#91a7ff", "#748ffc", "#5c7cfa", "#4c6ef5", "#4263eb", "#3b5bdb", "#364fc7"]
+  },
+  {
+    "colour_pallete_name": "Blue",
+    "colors": ["#e7f5ff", "#d0ebff", "#a5d8ff", "#74c0fc", "#4dabf7", "#339af0", "#228be6", "#1c7ed6", "#1971c2", "#1864ab"]
   }
   ];
 
@@ -155,7 +185,7 @@
 
     //create add button
     let addButton = document.createElement('button');
-    addButton.innerHTML = 'Import Scheme ';
+    addButton.innerHTML = 'Import + ';
     //add event listener on click
     addButton.onclick = () => {
       let colorsList = colors[i].colors
@@ -201,7 +231,7 @@
   //create empty state
   noResult = document.createElement('div');
   noResult.classList.add('no-results');
-  noResult.innerHTML = 'ಥ﹏ಥ  <br/> No Results'
+  noResult.innerHTML = '<span id="search-emoji">😞</span>  <br/>  Bummer! No results found.'
   noResult.style.display = "none";
   let bodyEl = document.querySelector('body');
   bodyEl.appendChild(noResult);
@@ -233,3 +263,7 @@
     }
   }
 </script>
+
+  
+    
+
