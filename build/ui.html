@@ -7,13 +7,6 @@
 
 <!--Styles-->
 <style>
-  #welcome {
-    font-family: "Inter", sans-serif;
-    font-size: 10px;
-    margin-left: 130px;
-    color: #666;
-    padding: 16px 8px;
-  }
 
   .colour_pallete-box {
     font-family: "Inter", sans-serif;
@@ -42,10 +35,10 @@
     font-size: 12px;
     align-self: flex-start;
     font-weight: 600;
-    background-color: #222;
     font-family: "Inter", sans-serif;
-    color: #FFF;
-    border: 2px solid #FFF;
+    color: #222;
+    background: transparent;
+    border: 2px solid #222;
     border-radius: 5px;
     outline: none;
     margin-left: 100px;
@@ -56,10 +49,9 @@
   .colour_pallete-box .header button:focus, .colour_pallete-box .header button:hover {
     cursor: pointer;
     outline: none;
-    background: #555;
-    color: #FFF;
+    background: #222;
     transition: all .15s ease;
-    animation: jello-horizontal 0.9s both;
+    color: #FFF;
   }
 
   .colour_pallete-box .color-list {
@@ -81,20 +73,21 @@
   }
 
   #search {
-   
-    border-bottom: 1px solid #dedede;
-    padding: 4px 8px;
+    padding: 6px;
     font-family: "Inter", sans-serif;
-    margin-left: 100px;
     font-size: 12px;
-    border: 1px solid #eee;
-    border-radius: 2px;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #dedede;
     outline: none;
-    border-radius: 5px;
     color: #2d3748;
     font-weight: 600;
     line-height: 1.1em;
     letter-spacing: -.035em;
+    width: 97.5%;
+  }
+
+  #search:hover, #search:focus {
+    border: 1px solid #dedede;
   }
 
   .no-results {
@@ -139,20 +132,16 @@
   }
 </style>
 
-<span id="welcome">Welcome to <strong>Color Spark</strong>! </span>
-<!--Search-->
-<input type="text" id="search" onkeyup="filter()" placeholder="Search">
+
+<input type="text" id="search" onkeyup="filter()" placeholder="Search schemes">
 
 <!--Divider-->
-<div class="divider"></div>
+
 <script type="text/javascript">
   // define palettes
   var colors = [{
-    "colour_pallete_name": "Gray",
-    "colors": ["#f8f9fa", "#f1f3f5", "#e9ecef", "#dee2e6", "#ced4da", "#adb5bd", "#868e96", "#495057", "#343a40", "#212529"]
-  }, {
     "colour_pallete_name": "Red",
-    "colors": ["#fff5f5", "#ffe3e3", "#ffc9c9", "#ffa8a8", "#ff8787", "#ff6b6b", "#fa5252", "#f03e3e", "#e03131", "#c92a2a"] // todo
+    "colors": ["#fff5f5", "#ffe3e3", "#ffc9c9", "#ffa8a8", "#ff8787", "#ff6b6b", "#fa5252", "#f03e3e", "#e03131", "#c92a2a"] 
   }, 
   {
     "colour_pallete_name": "Pink",
@@ -163,6 +152,10 @@
   }, {
     "colour_pallete_name": "Violet",
     "colors": ["#f3f0ff", "#e5dbff", "#d0bfff", "#b197fc", "#9775fa", "#845ef7", "#7950f2", "#7048e8", "#6741d9", "#5f3dc4"]
+  },
+  {
+  "colour_pallete_name": "Purple",
+  "colors": ["#F5F3FF", "#EDE9FE", "#DDD6FE", "#C4B5FD", "#A78BFA", "#8B5CF6", "#7C3AED", "#6D28D9", "#5B21B6", "#4C1D95"]
   },
   {
     "colour_pallete_name": "Indigo",
@@ -182,6 +175,10 @@
   },
   {
     "colour_pallete_name": "Green",
+    "colors": ["#e8f5e9", "#c8e6c9", "#a5d6a7", "#81c784", "#66bb6a", "#4caf50", "#43a047", "#388e3c", "#2e7d32", "#1b5e20"]
+  },
+  {
+    "colour_pallete_name": "Light Green",
     "colors": ["#ebfbee", "#d3f9d8", "#b2f2bb", "#8ce99a", "#69db7c", "#51cf66", "#40c057", "#37b24d", "#2f9e44", "#2b8a3e"]
   },
   {
@@ -190,12 +187,32 @@
   },
   {
     "colour_pallete_name": "Yellow",
-    "colors": ["#f4fce3", "#e9fac8", "#d8f5a2", "#c0eb75", "#a9e34b", "#94d82d", "#82c91e", "#74b816", "#66a80f", "#5c940d"]
+    "colors": ["#fffde7", "#fff9c4", "#fff59d", "#fff176", "#ffee58", "#ffeb3b", "#fdd835", "#fbc02d", "#f9a825", "#f57f17"]
+  },
+  {
+    "colour_pallete_name": "Amber",
+    "colors": ["#fff8e1", "#ffecb3", "#ffe082", "#ffd54f", "#ffca28", "#ffc107", "#ffb300", "#ffa000", "#ff8f00", "#ff6f00"]
   },
   {
     "colour_pallete_name": "Orange",
-    "colors": ["#f4fce3", "#e9fac8", "#d8f5a2", "#c0eb75", "#a9e34b", "#94d82d", "#82c91e", "#74b816", "#66a80f", "#5c940d"]
-  }
+    "colors": ["#fff4e6", "#ffe8cc", "#ffd8a8", "#ffc078", "#ffa94d", "#ff922b", "#fd7e14", "#f76707", "#e8590c", "#d9480f"]
+  },
+  {
+    "colour_pallete_name": "Deep Orange",
+    "colors": ["#fbe9e7", "#ffccbc", "#ffab91", "#ff8a65", "#ff7043", "#ff5722", "#f4511e", "#e64a19", "#d84315", "#bf360c"]
+  },
+  {
+  "colour_pallete_name": "Gray",
+    "colors": ["#f8f9fa", "#f1f3f5", "#e9ecef", "#dee2e6", "#ced4da", "#adb5bd", "#868e96", "#495057", "#343a40", "#212529"]
+  },
+  {
+    "colour_pallete_name": "Blue Gray",
+      "colors": ["#eceff1", "#cfd8dc", "#b0bec5", "#90a4ae", "#78909c", "#607d8b", "#546e7a", "#455a64", "#37474f", "#263238"]
+    },
+  {
+    "colour_pallete_name": "Brown",
+    "colors": ["#efebe9", "#d7ccc8", "#bcaaa4", "#a1887f", "#8d6e63", "#795548", "#6d4c41", "#5d4037", "#4e342e", "#3e2723"] 
+  },
   ];
 
   //create UI

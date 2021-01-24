@@ -9,8 +9,9 @@ function hex2rgb(hex) {
 // Calls to "parent.postMessage" from within the HTML page will trigger this
 // callback. The callback will be passed the "pluginMessage" property of the
 // posted message.
+
 figma.ui.onmessage = msg => {
-    if (msg.type === 'create-palette') {
+    if (msg.type === 'create-palette') {  
         const nodes = [];
         //create frame
         const colorsFrame = figma.createFrame();
@@ -34,6 +35,9 @@ figma.ui.onmessage = msg => {
 
             if (i > 0)
                 rect.name = msg.name + "-" + i + "00";
+            
+            else if (i === 0)
+                rect.name = msg.name + "-" + "50";
 
             rect.fills = [{ type: 'SOLID', color: { r: rgbColor[0] / 255, g: rgbColor[1] / 255, b: rgbColor[2] / 255 } }];
             figma.currentPage.appendChild(rect);
@@ -44,7 +48,7 @@ figma.ui.onmessage = msg => {
         figma.viewport.scrollAndZoomIntoView(nodes);
     }
 
-    
+   
     figma.closePlugin();
 };
 
