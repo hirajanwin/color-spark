@@ -19,7 +19,7 @@ figma.ui.onmessage = msg => {
         const frameWidth = (msg.colorsList.length * 124) + 24;
         colorsFrame.resizeWithoutConstraints(frameWidth, frameHeight);
         //set frame name
-        colorsFrame.name = msg.name + " Colors";
+        colorsFrame.name = msg.name + " Color Scheme";
         colorsFrame.x = figma.viewport.center.x;
         colorsFrame.y = figma.viewport.center.y;
         figma.notify(`👍 Successfully imported: ${msg.name}`)
@@ -31,6 +31,10 @@ figma.ui.onmessage = msg => {
             rect.x = 24 + (i * 124);
             let rgbColor = hex2rgb(msg.colorsList[i]);
             rect.name = msg.name + "-" + i;
+
+            if (i > 0)
+                rect.name = msg.name + "-" + i + "00";
+
             rect.fills = [{ type: 'SOLID', color: { r: rgbColor[0] / 255, g: rgbColor[1] / 255, b: rgbColor[2] / 255 } }];
             figma.currentPage.appendChild(rect);
             colorsFrame.appendChild(rect);

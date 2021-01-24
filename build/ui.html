@@ -7,16 +7,16 @@
 
 <!--Styles-->
 <style>
-  span {
+  #welcome {
     font-family: "Inter", sans-serif;
     font-size: 10px;
+    margin-left: 130px;
     color: #666;
     padding: 16px 8px;
   }
 
   .colour_pallete-box {
     font-family: "Inter", sans-serif;
-    border-bottom: 1px solid #eee;
     padding: 16px 8px;
   }
 
@@ -48,8 +48,7 @@
     border: 2px solid #FFF;
     border-radius: 5px;
     outline: none;
-    position: relative;
-    left: 1%;
+    margin-left: 100px;
     transition: all .15s ease;
     
   }
@@ -57,11 +56,10 @@
   .colour_pallete-box .header button:focus, .colour_pallete-box .header button:hover {
     cursor: pointer;
     outline: none;
-    background: gray;
+    background: #555;
     color: #FFF;
     transition: all .15s ease;
-    
-          animation: jello-horizontal 0.9s both;
+    animation: jello-horizontal 0.9s both;
   }
 
   .colour_pallete-box .color-list {
@@ -78,19 +76,25 @@
     margin-right: 8px;
   }
 
+  .colour_pallete-box .color-list .color:hover{
+    margin-top: -4px;
+  }
+
   #search {
    
     border-bottom: 1px solid #dedede;
     padding: 4px 8px;
     font-family: "Inter", sans-serif;
-    color: #333333;
-    position: relative;
-    left: 30%;
+    margin-left: 100px;
     font-size: 12px;
     border: 1px solid #eee;
     border-radius: 2px;
     outline: none;
-    font-family: 'Roboto Mono';
+    border-radius: 5px;
+    color: #2d3748;
+    font-weight: 600;
+    line-height: 1.1em;
+    letter-spacing: -.035em;
   }
 
   .no-results {
@@ -125,22 +129,23 @@
 
   ::-webkit-scrollbar {
     width: 5px;
+    
   }
   ::-webkit-scrollbar-thumb {
     background: #222;
   }
   ::-webkit-scrollbar-track {
-    background: #D3D1CB;
+    background: #eee;
   }
 </style>
 
-<span>Add palettes from popular design systems to your file</span>
+<span id="welcome">Welcome to <strong>Color Spark</strong>! </span>
 <!--Search-->
-<input type="text" id="search" onkeyup="filter()" placeholder="Search..">
+<input type="text" id="search" onkeyup="filter()" placeholder="Search">
 
 <!--Divider-->
 <div class="divider"></div>
-<script>
+<script type="text/javascript">
   // define palettes
   var colors = [{
     "colour_pallete_name": "Gray",
@@ -166,6 +171,30 @@
   {
     "colour_pallete_name": "Blue",
     "colors": ["#e7f5ff", "#d0ebff", "#a5d8ff", "#74c0fc", "#4dabf7", "#339af0", "#228be6", "#1c7ed6", "#1971c2", "#1864ab"]
+  },
+  {
+    "colour_pallete_name": "Cyan",
+    "colors": ["#e3fafc", "#c5f6fa", "#99e9f2", "#66d9e8", "#3bc9db", "#22b8cf", "#15aabf", "#1098ad", "#0c8599", "#0b7285"]
+  },
+  {
+    "colour_pallete_name": "Teal",
+    "colors": ["#e6fcf5", "#c3fae8", "#96f2d7", "#63e6be", "#38d9a9", "#20c997", "#12b886", "#0ca678", "#099268", "#087f5b"]
+  },
+  {
+    "colour_pallete_name": "Green",
+    "colors": ["#ebfbee", "#d3f9d8", "#b2f2bb", "#8ce99a", "#69db7c", "#51cf66", "#40c057", "#37b24d", "#2f9e44", "#2b8a3e"]
+  },
+  {
+    "colour_pallete_name": "Lime",
+    "colors": ["#f4fce3", "#e9fac8", "#d8f5a2", "#c0eb75", "#a9e34b", "#94d82d", "#82c91e", "#74b816", "#66a80f", "#5c940d"]
+  },
+  {
+    "colour_pallete_name": "Yellow",
+    "colors": ["#f4fce3", "#e9fac8", "#d8f5a2", "#c0eb75", "#a9e34b", "#94d82d", "#82c91e", "#74b816", "#66a80f", "#5c940d"]
+  },
+  {
+    "colour_pallete_name": "Orange",
+    "colors": ["#f4fce3", "#e9fac8", "#d8f5a2", "#c0eb75", "#a9e34b", "#94d82d", "#82c91e", "#74b816", "#66a80f", "#5c940d"]
   }
   ];
 
