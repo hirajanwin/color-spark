@@ -3,10 +3,7 @@
 
 
 <h1>Color Spark for Figma</h1>
-
-
-
- 
+  
   <a href="">
     <img alt="Code Size" src="https://img.shields.io/github/languages/code-size/heybereket/color-spark" />
   </a>
@@ -17,12 +14,7 @@
 
 # story
 
-Lunar Theme has always been in my head for a while now, just sitting there. I remember opening up VSCode and not knowing what theme I should pick because either there was one that I liked the background of but not the colours or that one that just didn't get updated frequently. Shortly after, I knew I wanted to do something about that. I quickly rolled out a piece of paper and had an idea and that idea was to make a Visual Studio Code theme, my original idea for that theme was not that great but turns out when I launched it, the next day it had over 50k installs...(yeah I wish). 
-
-Seriously, the whole thing grew expodentially and I wasn't noticing any growth in it, I lost the token for that extension and just quit that project. 
-<br><br> <b>4 months later...</b>
-
-But wait, hold on. Am I really going to just give up? No, look at me Bereket. You are going to make another extension that will be better than whatever you've built in the past. That's what was going through my head for weeks, until...I went for it. I sat down and just went on focus mode and hardcored coding that extension, which is now Lunar Theme!
+I've been noticing that there aren't a bunch of plugins on Figma that provide colour schemes, especially ones that I like. I created Color Spark because I wanted there to be a  colour scheme library Figma plugin and one that was easily accessible, no ads, none of that. 
 
 # features
 
