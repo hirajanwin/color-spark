@@ -1,5 +1,5 @@
 
-<img alt="Color Spark Logo" src="https://i.ibb.co/2nPgchY/color-spark-logo.png" width="100" />
+<img alt="Color Spark Logo" src="https://i.ibb.co/n77CrFg/color-spark-logo.png" width="100" />
 
 
 <h1>Color Spark for Figma</h1>
