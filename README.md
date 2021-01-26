@@ -41,4 +41,4 @@ Or do it yourself: <br>
 Massive thanks to everyone for installing the plugin, supporting me, or just reading any of this (as well as any future contributors). I also want to say thank you to all the color/scheme providers including but not limited to OpenColor, TailwindCSS, and MaterialUI. 
 
 Bereket Semagn - Creator <br>
-Find me on **Twitter** - <a href="https://twitter.com/imbereket">@imbereket</a>
+Find me on **Twitter** - <a href="https://twitter.com/imbereket">@heybereket</a>
