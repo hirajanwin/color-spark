@@ -4,6 +4,9 @@
 
 <h1>Color Spark for Figma</h1>
 
+  <a href="">
+    <img alt="License" src="https://img.shields.io/github/license/heybereket/color-spark" />
+  </a> 
   
   <a href="">
     <img alt="Code Size" src="https://img.shields.io/github/languages/code-size/heybereket/color-spark" />
